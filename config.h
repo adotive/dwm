@@ -1,18 +1,18 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 13;        /* gaps between windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int gappx     = 10;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" , "AppleColorEmoji:size=7" };
+static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#181818";
-static const char col_gray2[]       = "#7e7c74";
-static const char col_gray3[]       = "#d4d4d4";
-static const char col_gray4[]       = "#ebe7cd";
-static const char col_cyan[]        = "#545350";
+static const char col_gray1[]       = "#222222";
+static const char col_gray2[]       = "#444444";
+static const char col_gray3[]       = "#bbbbbb";
+static const char col_gray4[]       = "#eeeeee";
+static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -20,7 +20,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -33,7 +33,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
@@ -58,13 +58,12 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-i", "-p", "Run:", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,             		XK_s,	   spawn,	   SHCMD("~/.config/dmenu/scripts/search.sh") },
-        { MODKEY,                       XK_F11,    spawn,          SHCMD("pamixer -d 5") },
+	{ MODKEY,                       XK_F11,    spawn,          SHCMD("pamixer -d 5") },
 	{ MODKEY,                       XK_F12,    spawn,          SHCMD("pamixer -i 5") },
 	{ MODKEY,			XK_w,	   spawn,	   SHCMD("firefox") },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
@@ -102,9 +101,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-
-	{ MODKEY,		XK_e,	   spawn,	   SHCMD("~/.config/dmenu/scripts/emojis.sh") },
-	{ MODKEY|ShiftMask,             XK_x,      spawn,          SHCMD("~/.config/dmenu/scripts/powermenu.sh") },
+	{ MODKEY|ShiftMask,             XK_x,      spawn,          SHCMD("./.config/scripts/powermenu.sh") },
 };
 
 /* button definitions */

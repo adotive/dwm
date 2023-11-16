@@ -1,9 +1,6 @@
 //Modify this file to change what commands output to your statusbar, and recompile using the make command.
 static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
-
-	{" 🔋 ",	"acpi | awk '{print $4}' | tr -d ','",		 30, 0},
-
 	{" 🔊 ", 	"pamixer --get-volume-human",			  1, 0},
 
 	{" 📅 ", 	"date '+%d %B %Y'",				 60, 0},
