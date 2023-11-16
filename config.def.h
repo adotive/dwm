@@ -63,6 +63,7 @@ static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+	{ MODKEY|ShiftMask,             XK_x,      spawn,          SHCMD("./.config/dmenu/powermenu.sh") },
 	{ MODKEY,                       XK_F11,    spawn,          SHCMD("pamixer -d 5") },
 	{ MODKEY,                       XK_F12,    spawn,          SHCMD("pamixer -i 5") },
 	{ MODKEY,			XK_w,	   spawn,	   SHCMD("firefox") },
@@ -101,7 +102,6 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_x,      spawn,          SHCMD("./.config/scripts/powermenu.sh") },
 };
 
 /* button definitions */
