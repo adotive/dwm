@@ -58,14 +58,14 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-i", "-p" , " Run  ", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-i", "-p" , "Run:", NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             XK_x,      spawn,          SHCMD("./.config/dmenu/scripts/powermenu.sh") },
-	{ MODKEY,                       XK_F11,    spawn,          SHCMD("pamixer -d 5") },
-	{ MODKEY,                       XK_F12,    spawn,          SHCMD("pamixer -i 5") },
+	{ MODKEY,                       XK_F8,    spawn,           SHCMD("pamixer -d 5") },
+	{ MODKEY,                       XK_F9,    spawn,           SHCMD("pamixer -i 5") },
 	{ MODKEY,			XK_w,	   spawn,	   SHCMD("firefox") },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
