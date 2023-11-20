@@ -24,7 +24,7 @@ Antes de compilar e instalar o **dwm**, certifique-se de ter os seguintes pacote
 1. Clone este repositório:
 
 ```bash
-git clone https://github.com/seu_usuario/dwm.git
+git clone https://github.com/adotive/dwm
 ```
 
 2. Navegue até o diretório dwm:
