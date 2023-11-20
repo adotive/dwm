@@ -63,6 +63,8 @@ static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+	{ MODKEY,			XK_F9,	   spawn,	   SHCMD("pamixer -i 5") },
+	{ MODKEY,			XK_F8,     spawn,	   SHCMD("pamixer -d 5") },
 	{ MODKEY,			XK_w,	   spawn,	   SHCMD("firefox") },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
