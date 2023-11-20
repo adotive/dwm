@@ -67,8 +67,8 @@ static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,			XK_F9,	   spawn,	   SHCMD("pamixer -i 5") },
-	{ MODKEY,			XK_F8,     spawn,	   SHCMD("pamixer -d 5") },
+	{ MODKEY,			XK_F9,	   spawn,	   SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%") },
+	{ MODKEY,			XK_F8,     spawn,	   SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%") },
 	{ MODKEY,			XK_w,	   spawn,	   SHCMD("firefox") },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
@@ -93,8 +93,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
-	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
+	{ MODKEY,                       XK_z,      setgaps,        {.i = -1 } },
+	{ MODKEY,                       XK_x,      setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
